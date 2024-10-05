@@ -16,8 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from . import views
+from machinemanagment import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("home.urls")),
+    path('maquinaria/', views.maquinaria, name='maquinaria'),  # Ruta para la página de maquinaria
+    path('inventario/', views.inventario, name='inventario'),  # Ruta para la página de inventario
+    path('status/', views.status, name='status'),  # Ruta para la página de inventario
+    path('empresa/', views.empresa, name='empresa'),  # Ruta para la página de inventario
+    path('empleados/', views.empleados, name='empleados'),  # Ruta para la página de inventario
+    path('home/', views.home, name='home'),  # Ruta para la página de inventario
+
 ]
